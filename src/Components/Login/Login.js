@@ -12,7 +12,7 @@ function Login() {
             </div>
             <div className="blogsBox">
                 <div className="blogs">Blogs</div>
-                <div className="blogsText">publish your passions,your way...</div>
+                <div className="blogsText">Publish your passions,your way...</div>
                 <div className="loginText">Login</div>
                 <div className="emailId">Email id</div>
                 <div>
@@ -26,6 +26,7 @@ function Login() {
                 </div>
                 <div><button className="loginButton">Login</button></div>
             </div>
+            <div className="footer">Copyright2022</div>
         </div>
     );
 }

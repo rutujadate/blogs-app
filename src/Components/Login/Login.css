@@ -1,7 +1,9 @@
-.backgroundColor{
+.backgroundColor {
     background-color: rgb(223, 224, 225);
+    height: 100vh;
 }
-.header{
+
+.header {
     display: flex;
     justify-content: space-between;
     padding: 13px;
@@ -9,74 +11,108 @@
     color: white;
     align-items: center;
 }
-.blogsName{
-font-size: 20px;
-font-weight: 700;
-margin-left: 20px;
+
+.blogsName {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
 }
-.subHeader{
+
+.subHeader {
     display: flex;
     justify-content: space-between;
 }
-.loginName{
+
+.loginName {
     margin-right: 30px;
     font-size: 13px;
     font-weight: 700;
+
 }
-.registerName{
+
+.registerName {
     font-size: 13px;
     font-weight: 700;
     margin-right: 40px;
+
 }
-.blogsBox{
-    border: 1px solid black;
-    width: 30%;
+
+.blogsBox {
+    border: 1px soild #bdbbbb;
+    width: 25%;
     margin: auto;
     background-color: rgb(246, 247, 249);
     margin-top: 30px;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(6, 5, 5, 0.3);
+
+
 }
-.blogs{
+
+.blogs {
     font-size: 30px;
     font-weight: 700;
-    padding-top: 10px ;
+    padding-top: 10px;
     color: black;
-    margin-left:10px ;
+    margin-left: 10px;
 }
-.blogsText{
+
+.blogsText {
     font-size: 15px;
-    margin:0px 10px;
+    margin: 0px 10px;
     border-bottom: 1px solid gray;
     padding: 10px 0px;
+
 }
-.loginText{
+
+.loginText {
     text-align: center;
     color: rgb(9, 9, 109);
     font-size: 30px;
     font-weight: 700;
-    padding:20px 0px
+    padding: 20px 0px;
+
 }
-.emailId{
+
+.emailId {
     margin-left: 10px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
+
+
 }
-.inputField{
+
+.inputField {
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 5px;
     padding: 8px;
-    width: 92%;
+    width: 89%;
     border: none;
 }
-.password{
+
+.password {
     margin-left: 10px;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 500;
+    margin-top: 20px;
 }
-.loginButton{
-    width: 100%;
-    font-size: 20px;
-    background-color: blue;
+
+.loginButton {
+    width: 94%;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: rgb(5, 5, 136);
     color: white;
+    margin-bottom: 90px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.footer {
+    text-align: center;
+    margin-top: 100px;
 }
