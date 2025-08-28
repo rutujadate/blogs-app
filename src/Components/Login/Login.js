@@ -26,7 +26,7 @@ function Login() {
                 </div>
                 <div><button className="loginButton">Login</button></div>
             </div>
-            <div className="footer">Copyright2022</div>
+            <div className="footer">Copyright©2022</div>
         </div>
     );
 }
