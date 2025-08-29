@@ -1,0 +1,125 @@
+.name{
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+.backgroundColor {
+    background-color: rgb(223, 224, 225);
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 13px;
+    background-color: rgb(6, 6, 107);
+    color: white;
+    align-items: center;
+}
+
+.blogsName {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 20px;
+}
+
+.subHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginName {
+    margin-right: 30px;
+    font-size: 13px;
+    font-weight: 700;
+
+}
+
+.registerName {
+    font-size: 13px;
+    font-weight: 700;
+    margin-right: 40px;
+
+}
+
+.blogsBox {
+    border: 1px soild #bdbbbb;
+    width: 25%;
+    margin: auto;
+    background-color: rgb(246, 247, 249);
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(6, 5, 5, 0.3);
+
+
+}
+
+.blogs {
+    font-size: 30px;
+    font-weight: 700;
+    padding-top: 10px;
+    color: black;
+    margin-left: 10px;
+}
+
+.blogsText {
+    font-size: 15px;
+    margin: 0px 10px;
+    border-bottom: 1px solid gray;
+    padding: 10px 0px;
+
+}
+
+.loginText {
+    text-align: center;
+    color: rgb(9, 9, 109);
+    font-size: 30px;
+    font-weight: 700;
+    padding: 20px 0px;
+
+}
+
+.emailId1 {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+
+
+}
+
+.inputField {
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 5px;
+    padding: 8px;
+    width: 89%;
+    border: none;
+}
+
+.password {
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.loginButton {
+    width: 94%;
+    margin-left: 10px;
+    font-size: 15px;
+    background-color: rgb(5, 5, 136);
+    color: white;
+    margin-bottom: 90px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+
+}
+
+.footer {
+    text-align: center;
+    margin-top: 100px;
+}
