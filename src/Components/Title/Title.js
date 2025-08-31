@@ -1,7 +1,7 @@
 import "./Title.css";
 function Title(){
     return(
-<div>
+<div className="titleBackgroundColor">
     <div className="titleHeader">
                 <div className="titleBlogsName">Blogs</div>
                 <div className="titleSubHeader">
