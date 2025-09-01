@@ -1,5 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./Title.css";
 function Title(){
+    const navigate=useNavigate();
+    const navigateToDashboard=()=>{
+        navigate("/")
+    }
     return(
 <div className="titleBackgroundColor">
     <div className="titleHeader">
@@ -23,8 +28,8 @@ function Title(){
                 type="text"
                 placeholder="Description" className="textAreaDescription"/>
                 <div className="textAreaButtons">
-                    <button className="buttons">Cancel</button>
-                    <button className="buttons">Save</button>
+                    <button className="buttons" onClick={navigateToDashboard}>Cancel</button>
+                    <button className="buttons" onClick={navigateToDashboard}>Save</button>
                 </div>
             </div>
 </div>

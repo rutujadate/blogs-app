@@ -55,6 +55,7 @@ height:100vh ;
 .titleText{
     font-size: 30px;
     padding:10px;
+    margin:0px 10px;
     border-top: none;
     border-left: none;
     border-right: none;

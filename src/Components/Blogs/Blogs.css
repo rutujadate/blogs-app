@@ -1,0 +1,171 @@
+ .blogsBackgroundColor {
+   background-color: #dbd8d8;
+   height: 100vh;
+ }
+
+ .blogsHeader {
+   display: flex;
+   justify-content: space-between;
+   padding: 13px;
+   background-color: rgb(6, 6, 107);
+   color: white;
+   align-items: center;
+ }
+
+ .blogsName {
+   font-size: 20px;
+   font-weight: 700;
+   margin-left: 20px;
+ }
+
+ .blogsSubHeader {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-right: 40px;
+ }
+
+ .bolgsLoginName {
+   margin-right: 30px;
+   font-size: 13px;
+   font-weight: 700;
+
+ }
+
+ .arrow {
+   margin: 0px 30px;
+   font-size: 13px;
+   font-weight: 700;
+
+ }
+
+ .bolgsLogout {
+   font-size: 23px;
+   font-weight: 700;
+   text-decoration: none;
+   border: none;
+   background-color: rgb(6, 6, 107);
+   ;
+   /* margin-: 50px; */
+
+ }
+
+ .blogsLogout {
+   /* font-size: 23px; */
+   /* font-weight: 700; */
+   text-decoration: none;
+   border: none;
+   background-color: rgb(6, 6, 107);
+   color: white;
+ }
+
+ .logoutButton {
+   color: white;
+   font-size: 20px;
+ }
+
+ .contentBox2 {
+   display: flex;
+   justify-content: space-between;
+   /* width:60%; */
+   margin-top: 20px;
+
+ }
+
+ .contentBox {
+   width: 60%;
+   margin: auto;
+ }
+
+ .title {
+   font-size: 40px;
+   font-weight: bold;
+   margin-bottom: 10px;
+  
+ }
+
+ .createButton {
+   background-color: navy;
+   color: white;
+   border-radius: 8px;
+   padding: 10px;
+   margin-right: 15px;
+   /* width: 10%; */
+   border: none;
+   font-weight: 800;
+ }
+
+ .blogCard {
+   background-color: white;
+   margin-top: 1.5rem;
+   border-radius: 0.375rem;
+   width: 60%;
+   margin: auto;
+   margin-top: 30px;
+ }
+
+ .blogContent {
+   margin-left: 0.75rem;
+   margin-right: 0.75rem;
+ }
+
+ .blogTitle {
+   font-size: 30px;
+   font-weight: bold;
+   padding-top: 1rem;
+   font-family: serif;
+ }
+
+ .blogDivider {
+   border-color: #4b5563;
+   padding: 0.5rem;
+   margin-top: 0.5rem;
+ }
+
+ .blogActions {
+   display: flex;
+   justify-content: space-between;
+   padding-bottom: 2.5rem;
+   padding-top: 0.75rem;
+ }
+
+ .likeButton {
+   background-color: #1e961e;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius: 8px;
+   margin-right: 10px;
+   font-weight: bold;
+
+ }
+
+ .dislikeButton {
+   background-color: yellow;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   padding: 10px;
+   font-weight: bold;
+
+
+ }
+
+ .editButton {
+   background-color: #615f5f;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius: 8px;
+   margin-right:10px;
+   font-weight: bold;
+ }
+
+ .deleteButton {
+   background-color: #fc2929;
+   color: white;
+   padding: 10px;
+   border: none;
+   border-radius:8px;
+   font-weight: bold;
+ }
