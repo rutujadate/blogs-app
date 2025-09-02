@@ -1,18 +1,42 @@
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
+import { useState } from "react";
 
 function Login() {
-        const navigate= useNavigate();
-        const navigateToDashboard=()=>{
-            navigate("/")
-        }
-        const navigateToRegister=()=>{
-            navigate("/register")
+    const [userdata, setUserData] = useState({email:"",password:""});
+    function handlePasswordData(event) {
+        let user={...userdata};
+       user["password"]=event.target.value;
+       setUserData(user);
+    }
 
-        }
-        const navigateToBlogs=()=>{
-            navigate("/blogs")
-        }
+
+    function handleEmailData(event) {
+        let user={...userdata};
+        user["email"]=event.target.value;
+        setUserData(user);
+    }
+
+    function handleLoginData(){
+    console.log(userdata);
+    navigate("/blogs")
+
+    }
+
+    const navigate = useNavigate();
+    const navigateToDashboard = () => {
+        navigate("/")
+    }
+    const navigateToRegister = () => {
+        navigate("/register")
+        
+        
+
+    }
+    // const navigateToBlogs = () => {
+    //     navigate("/blogs")
+    
+    // }
 
 
     return (
@@ -31,14 +55,22 @@ function Login() {
                 <div className="emailId">Email id</div>
                 <div>
                     <input type="text"
-                        placeholder="test@gmail.com" className="inputField" />
+                        placeholder="test@gmail.com"
+                        value={userdata.email}
+                        onChange={handleEmailData}
+                        className="inputField"
+                    />
                 </div>
                 <div className="password">Password</div>
                 <div>
                     <input type="Password"
-                        placeholder="test@123" className="inputField" />
+                        placeholder="test@123"
+                        value={userdata.password}
+                        onChange={handlePasswordData}
+                        className="inputField"
+                    />
                 </div>
-                <div><button className="loginButton" onClick={navigateToBlogs}>Login</button></div>
+                <div><button className="loginButton" onClick={handleLoginData}>Login</button></div>
             </div>
         </div>
     );

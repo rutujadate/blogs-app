@@ -1,6 +1,26 @@
 import { useNavigate } from "react-router-dom";
 import "./Title.css";
 function Title(){
+    const [userdata, setUserData] = useState({title:"",description:""});
+        function handleTitle(event) {
+            let user={...userdata};
+           user["title"]=event.target.value;
+           setUserData(user);
+        }
+    
+    
+        function handldescription(event) {
+            let user={...userdata};
+            user["description"]=event.target.value;
+            setUserData(user);
+        }
+    
+        function handleTitleData(){
+        console.log(userdata);
+        navigate("/blogs")
+    
+        }
+    
     const navigate=useNavigate();
     const navigateToDashboard=()=>{
         navigate("/")
@@ -21,12 +41,19 @@ function Title(){
             <div className="textAreaBox">
                 <div>
                     <input type="text"
-                    placeholder="Title" className="titleText"
+                    placeholder="Title"
+                    value={userdata.title}
+                    onChange={handleTitle}
+                    className="titleText"
                     />
                 </div>
                 <textarea
                 type="text"
-                placeholder="Description" className="textAreaDescription"/>
+                placeholder="Description"
+                 className="textAreaDescription"
+                 value={userdata.description}
+                    onChange={handldescription}
+                 />
                 <div className="textAreaButtons">
                     <button className="buttons" onClick={navigateToDashboard}>Cancel</button>
                     <button className="buttons" onClick={navigateToDashboard}>Save</button>

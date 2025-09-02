@@ -4,12 +4,12 @@
     font-weight: 500;
     margin-top: 20px;
 }
-.backgroundColor {
+.registerBackgroundColor {
     background-color: rgb(223, 224, 225);
     height: 100vh;
 }
 
-.header {
+.registerHeader {
     display: flex;
     justify-content: space-between;
     padding: 13px;
@@ -18,18 +18,18 @@
     align-items: center;
 }
 
-.blogsName {
+.registerBlogsName {
     font-size: 20px;
     font-weight: 700;
     margin-left: 20px;
 }
 
-.subHeader {
+.registerSubHeader {
     display: flex;
     justify-content: space-between;
 }
 
-.loginName {
+.registerLoginName {
     margin-right: 30px;
     font-size: 13px;
     font-weight: 700;
@@ -43,7 +43,7 @@
 
 }
 
-.blogsBox {
+.registerBlogsBox {
     border: 1px soild #bdbbbb;
     width: 25%;
     margin: auto;
@@ -55,7 +55,7 @@
 
 }
 
-.blogs {
+.registerBlogs {
     font-size: 30px;
     font-weight: 700;
     padding-top: 10px;
@@ -63,7 +63,7 @@
     margin-left: 10px;
 }
 
-.blogsText {
+.registerBlogsText {
     font-size: 15px;
     margin: 0px 10px;
     border-bottom: 1px solid gray;
@@ -71,7 +71,7 @@
 
 }
 
-.loginText {
+.registerText {
     text-align: center;
     color: rgb(9, 9, 109);
     font-size: 30px;
@@ -89,7 +89,7 @@
 
 }
 
-.inputField {
+.registerInputField {
     margin-top: 10px;
     margin-left: 10px;
     border-radius: 5px;
@@ -105,7 +105,7 @@
     margin-top: 20px;
 }
 
-.loginButton {
+.registerButton {
     width: 94%;
     margin-left: 10px;
     font-size: 15px;
