@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Title.css";
+import { useState } from "react";
 function Title(){
     const [userdata, setUserData] = useState({title:"",description:""});
         function handleTitle(event) {
@@ -9,7 +10,7 @@ function Title(){
         }
     
     
-        function handldescription(event) {
+        function handlDescription(event) {
             let user={...userdata};
             user["description"]=event.target.value;
             setUserData(user);
@@ -28,7 +29,7 @@ function Title(){
     return(
 <div className="titleBackgroundColor">
     <div className="titleHeader">
-                <div className="titleBlogsName">Blogs</div>
+                <div className="titleBlogsName" onClick={navigateToDashboard}>Blogs</div>
                 <div className="titleSubHeader">
                     <div className="titleLoginName">Rutuja Date</div>
                     <div className="arrow">
@@ -52,11 +53,11 @@ function Title(){
                 placeholder="Description"
                  className="textAreaDescription"
                  value={userdata.description}
-                    onChange={handldescription}
+                    onChange={handlDescription}
                  />
                 <div className="textAreaButtons">
                     <button className="buttons" onClick={navigateToDashboard}>Cancel</button>
-                    <button className="buttons" onClick={navigateToDashboard}>Save</button>
+                    <button className="buttons" onClick={handleTitleData}>Save</button>
                 </div>
             </div>
 </div>
