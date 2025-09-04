@@ -1,29 +1,42 @@
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useState } from "react";
+import axios from "axios";
 
 function Register() {
-const [userdata, setUserData] = useState({name:"",email:"",password:""});
+    const [userdata, setUserData] = useState({ name: "", email: "", password: "" });
     function handlePasswordData(event) {
-        let user={...userdata};
-       user["password"]=event.target.value;
-       setUserData(user);
+        let user = { ...userdata };
+        user["password"] = event.target.value;
+        setUserData(user);
     }
-function handleNameInfo(event){
-    let user={...userdata};
-    user["name"]=event.target.value;
-    setUserData(user);
-}
-
-    function handleEmailData(event) {
-        let user={...userdata};
-        user["email"]=event.target.value;
+    function handleNameInfo(event) {
+        let user = { ...userdata };
+        user["name"] = event.target.value;
         setUserData(user);
     }
 
-    function handleRegisterData(){
-    console.log(userdata);
-    navigate("/login")
+    function handleEmailData(event) {
+        let user = { ...userdata };
+        user["email"] = event.target.value;
+        setUserData(user);
+    }
+
+    function handleRegisterData() {
+        console.log(userdata);
+        // navigate("/login")
+        axios.post('http://localhost:3001/users', userdata)
+            .then((singleElement) => {
+                console.log('User Registered:', singleElement.data);
+                navigate("/login")
+                // Reset the form
+                setUserData({
+                    name: '',
+                    email: '',
+                    password: ''
+                });
+            })
+
 
     }
 
