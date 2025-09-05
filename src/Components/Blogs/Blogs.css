@@ -1,6 +1,7 @@
  .blogsBackgroundColor {
    background-color: #dbd8d8;
    height: 100vh;
+   height: 100%;
  }
 
  .blogsHeader {

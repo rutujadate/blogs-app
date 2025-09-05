@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
+import axios from "axios";
 
 function Login() {
     const [userdata, setUserData] = useState({email:"",password:""});
@@ -19,26 +20,22 @@ function Login() {
 
     function handleLoginData(){
     console.log(userdata);
-    navigate("/blogs")
-
+    axios.get('http://localhost:3001/users', {
+    })
+    .then((single) => {
+      if (single.data.length > 0) {
+        console.log("Logged in user:", single.data[0]);
+            navigate("/blogs")
+      } 
+    })
     }
-
     const navigate = useNavigate();
     const navigateToDashboard = () => {
         navigate("/")
     }
     const navigateToRegister = () => {
         navigate("/register")
-        
-        
-
     }
-    // const navigateToBlogs = () => {
-    //     navigate("/blogs")
-    
-    // }
-
-
     return (
         <div className="backgroundColor">
             <div className="header">

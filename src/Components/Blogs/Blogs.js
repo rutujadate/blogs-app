@@ -1,47 +1,40 @@
 import { useNavigate } from "react-router-dom";
 import "./Blogs.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 function Blogs() {
-  const navigate= useNavigate();
-        const navigateToDashboard=()=>{
-            navigate("/")
-        }
-    const navigateToTitle=()=>{
-      navigate("/title")
-    }
+  const navigate = useNavigate();
+  const navigateToDashboard = () => {
+    navigate("/")
+  }
+  const navigateToTitle = () => {
+    navigate("/title")
+  }
 
 
 
   const [liked, setLiked] = useState(0);
   const [disliked, setDisliked] = useState(0);
-  // const [likeCount, setLikeCount] = useState(0);
-  // const [dislikeCount, setDislikeCount] = useState(0);
+  const [blogsInfo, setBlogsInfo] = useState([]);
 
-  function handleLiked(){
-  
-      setLiked(liked + 1);
-    }
+  function handleLiked() {
 
-  function handleDisliked (){
-      setDisliked(disliked + 1);
+    setLiked(liked + 1);
   }
-      // Creating Array
-  const blogsInfo = [
-    {
 
-      title: "Hello World",
-      createdBy: "rutuja.Date@gmail.com",
-      createdAt: "1st Dec, 2021",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    },
-    // {
-    //   title: "Hello World Again",
-    //   createdby: "rutuja.Date@gmail.com",
-    //   createdat: "2nd Dec, 2021",
-    //   content: "",
+  function handleDisliked() {
+    setDisliked(disliked + 1);
+  }
+  useEffect(() => {
+    axios.get("http://localhost:3001/blogs")
+      .then((singleElement) => {
+        setBlogsInfo(singleElement.data.blogsInfo || singleElement.data);
 
-    // }
-  ];
+      })
+      .catch((error) => {
+        console.error("Error fetching blogs:", error);
+      })
+  }, []);
 
 
   return (
@@ -53,8 +46,8 @@ function Blogs() {
               <div className="blogsLoginName">Rutuja Date</div>
               <div className="arrow">
                 <button className="blogsLogout">
-                <i className="fa fa-arrow-circle-o-right " aria-hidden="true"></i> Logout
-              </button>
+                  <i className="fa fa-arrow-circle-o-right " aria-hidden="true"></i> Logout
+                </button>
               </div>
             </div>
           </div>
@@ -70,7 +63,7 @@ function Blogs() {
           </div>
           <div>Publish your passion your way...</div>
           <hr />
-        </div>
+        </div>     {/*}.........Using map.... */}
         {blogsInfo.map((singleElement) => (
           <div className="blogCard">
             <div className="blogContent">

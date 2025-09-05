@@ -1,8 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import "./Title.css";
 import { useState } from "react";
+import axios from "axios";
 function Title(){
     const [userdata, setUserData] = useState({title:"",description:""});
+    function handleSaveButton(){
+        console.log(userdata)
+        axios.post('http://localhost:3001/blogs',userdata)
+        navigate("/blogs")
+        
+    }
         function handleTitle(event) {
             let user={...userdata};
            user["title"]=event.target.value;
@@ -57,7 +64,7 @@ function Title(){
                  />
                 <div className="textAreaButtons">
                     <button className="buttons" onClick={navigateToDashboard}>Cancel</button>
-                    <button className="buttons" onClick={handleTitleData}>Save</button>
+                    <button className="buttons" onClick={handleSaveButton}>Save</button>
                 </div>
             </div>
 </div>
