@@ -4,31 +4,49 @@ import { useState } from "react";
 import axios from "axios";
 
 function Login() {
-    const [userdata, setUserData] = useState({email:"",password:""});
+    // const [email, setMessage] = useState('');
+    const [userdata, setUserData] = useState({ email: "", password: "" });
     function handlePasswordData(event) {
-        let user={...userdata};
-       user["password"]=event.target.value;
-       setUserData(user);
+        let user = { ...userdata };
+        user["password"] = event.target.value;
+        setUserData(user);
     }
 
 
     function handleEmailData(event) {
-        let user={...userdata};
-        user["email"]=event.target.value;
+        let user = { ...userdata };
+        user["email"] = event.target.value;
         setUserData(user);
     }
 
-    function handleLoginData(){
-    console.log(userdata);
-    axios.get('http://localhost:3001/users', {
-    })
-    .then((single) => {
-      if (single.data.length > 0) {
-        console.log("Logged in user:", single.data[0]);
-            navigate("/blogs")
-      } 
-    })
+    function handleLoginData() {
+        console.log(userdata);
+        // navigate("/blogs")
+        axios.get('http://localhost:3001/users')
+            .then((response) => {
+                console.log('Response', response);
+                
+                    response.data.map((user) => {
+                        console.log('user', user)
+                        if (userdata.email === user.email && userdata.password === user.password) {
+                            console.log('Welcome to Blogs Application');
+                            navigate("/blogs")
+                        }
+                        else {
+                            // console.log('Invalid User');
+                            alert("Invalid User")
+                        }
+
+                    })
+            
+            });
+            // .catch((error) => {
+            //     console.log('Error fetching users:', error);
+            // });
+
     }
+
+
     const navigate = useNavigate();
     const navigateToDashboard = () => {
         navigate("/")
@@ -36,6 +54,7 @@ function Login() {
     const navigateToRegister = () => {
         navigate("/register")
     }
+
     return (
         <div className="backgroundColor">
             <div className="header">
@@ -68,8 +87,11 @@ function Login() {
                     />
                 </div>
                 <div><button className="loginButton" onClick={handleLoginData}>Login</button></div>
+
+
             </div>
         </div>
     );
 }
 export default Login;
+

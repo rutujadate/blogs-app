@@ -1,19 +1,22 @@
 {
   "users": [
     {
-      "name": "Rutuja"
+      "id": "a7c9",
+      "name": "Rutuja Date",
+      "email": "daterutuja@gmail.com",
+      "password": "123"
     },
     {
-      "id": "de48",
-      "name": "retynm",
-      "email": "vghjk",
-      "password": "rghjkl"
+      "id": "3007",
+      "name": "Rutuja Date",
+      "email": "daterutuja@gmail.com",
+      "password": "123"
     },
     {
-      "id": "4aaa",
-      "name": "rutuja",
-      "email": "acfgbvc",
-      "password": "1234"
+      "id": "84d3",
+      "name": "",
+      "email": "",
+      "password": ""
     }
   ],
   "blogs": [
@@ -26,6 +29,11 @@
       "id": "455a",
       "title": "Rutuja  ",
       "description": "A \"Hello, World!\" program is usually a simple computer program that emits (or displays) to the screen (often the console) a message similar to \"Hello, World!\". A small piece of code in most general-purpose programming languages, this program is used to illustrate a language's basic syntax. Such a program is often the first written by a student of a new programming language,[1] but it can also be used as a sanity check to ensure that the computer software intended to compile or run source code is correctly installed, and that its operator understands how to use it.\nA \"Hello, World!\" program is usually a simple computer program that emits (or displays) to the screen (often the console) a message similar to \"Hello, World!\". A small piece of code in most general-purpose programming languages, this program is used to illustrate a language's basic syntax. Such a program is often the first written by a student of a new programming language,[1] but it can also be used as a sanity check to ensure that the computer sof"
+    },
+    {
+      "id": "855c",
+      "title": "My Blog",
+      "description": "Hello ......"
     }
   ]
 }

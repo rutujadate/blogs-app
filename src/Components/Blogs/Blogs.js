@@ -25,10 +25,22 @@ function Blogs() {
   function handleDisliked() {
     setDisliked(disliked + 1);
   }
+  function handleToDelete(id){
+    axios.delete(`http://localhost:3001/blogs/${id}`)
+          .then(() => {
+        // Remove blog from UI
+        setBlogsInfo(blogsInfo.filter((blog) => blog.id !== id));
+        console.log(`Blog with ID ${id} deleted.`);
+      })
+      .catch((error) => {
+        console.error("Error deleting blog:", error);
+      });
+  }
+  }
   useEffect(() => {
     axios.get("http://localhost:3001/blogs")
-      .then((singleElement) => {
-        setBlogsInfo(singleElement.data.blogsInfo || singleElement.data);
+      .then((response) => {
+        setBlogsInfo(response.data.blogsInfo || response.data);
 
       })
       .catch((error) => {
@@ -63,7 +75,8 @@ function Blogs() {
           </div>
           <div>Publish your passion your way...</div>
           <hr />
-        </div>     {/*}.........Using map.... */}
+        </div>   
+          {/*}.........Using map.... */}
         {blogsInfo.map((singleElement) => (
           <div className="blogCard">
             <div className="blogContent">
@@ -96,7 +109,7 @@ function Blogs() {
                     <button className="editButton" onClick={navigateToTitle}>
                       <i className="fa fa-pencil" aria-hidden="true"></i> Edit
                     </button>
-                    <button className="deleteButton">
+                    <button className="deleteButton" onClick={handleToDelete}>
                       <i className="fa fa-trash" aria-hidden="true"></i> Delete
                     </button>
                   </div>
