@@ -25,27 +25,29 @@ function Blogs() {
   function handleDisliked() {
     setDisliked(disliked + 1);
   }
-  function handleToDelete(id){
+  function handleToDelete(id) {
     axios.delete(`http://localhost:3001/blogs/${id}`)
-          .then(() => {
-        // Remove blog from UI
-        setBlogsInfo(blogsInfo.filter((blog) => blog.id !== id));
-        console.log(`Blog with ID ${id} deleted.`);
+      .then(response => {
+        console.log('Item deleted:', response.data.id);
+        getAllBlogs()
       })
-      .catch((error) => {
-        console.error("Error deleting blog:", error);
+      .catch(error => {
+        console.error('Error deleting item:', error);
       });
   }
-  }
-  useEffect(() => {
-    axios.get("http://localhost:3001/blogs")
-      .then((response) => {
+  function getAllBlogs(){
+       axios.get("http://localhost:3001/blogs")
+        .then((response) => {
         setBlogsInfo(response.data.blogsInfo || response.data);
-
-      })
-      .catch((error) => {
+    })
+    .catch((error) => {
         console.error("Error fetching blogs:", error);
       })
+  }
+
+
+  useEffect(() => {
+    getAllBlogs()
   }, []);
 
 
@@ -75,8 +77,8 @@ function Blogs() {
           </div>
           <div>Publish your passion your way...</div>
           <hr />
-        </div>   
-          {/*}.........Using map.... */}
+        </div>
+        {/*}.........Using map.... */}
         {blogsInfo.map((singleElement) => (
           <div className="blogCard">
             <div className="blogContent">
@@ -106,10 +108,14 @@ function Blogs() {
                     </button>
                   </div>
                   <div>
-                    <button className="editButton" onClick={navigateToTitle}>
+                    <button className="editButton"
+                      onClick={navigateToTitle}
+                    >
                       <i className="fa fa-pencil" aria-hidden="true"></i> Edit
                     </button>
-                    <button className="deleteButton" onClick={handleToDelete}>
+                    <button className="deleteButton"
+                      onClick={()=>handleToDelete(singleElement.id)}
+                    >
                       <i className="fa fa-trash" aria-hidden="true"></i> Delete
                     </button>
                   </div>
