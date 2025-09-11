@@ -17,11 +17,52 @@
       "name": "",
       "email": "",
       "password": ""
+    },
+    {
+      "id": "de2d",
+      "name": "Rutuja Date",
+      "email": "daterutuja@gmail.com",
+      "password": "123"
     }
   ],
   "blogs": [
     {
-      "id": "13b6",
+      "id": "8d14",
+      "title": "Rutuja",
+      "description": "I am Rutuja Balasaheb Date",
+      "likes": 10,
+      "dislikes": 19
+    },
+    {
+      "id": "ad28",
+      "title": "My Second blog",
+      "description": "Hello ,I am Rutuja Date",
+      "likes": 17,
+      "dislikes": 4
+    },
+    {
+      "id": "4f04",
+      "title": "My first blog",
+      "description": "A \"Hello, World!\" program is usually a simple computer program that emits (or displays) to the screen (often the console) a message similar to \"Hello, World!\". A small piece of code in most general-purpose programming languages, this program is used to illustrate a language's basic syntax. Such a program is often the first written by a student of a new programming language,[1] but it can also be used as a sanity check to ensure that the computer software intended to compile or run source code is correctly installed, and that its operator understands how to use it.",
+      "dislikes": 9,
+      "likes": 4
+    },
+    {
+      "id": "3df7",
+      "title": "fsfsfs",
+      "description": "fsfsfsfsf",
+      "likes": 1,
+      "dislikes": 0
+    },
+    {
+      "id": "04d2",
+      "title": "Rutuja",
+      "description": "hello",
+      "likes": 15,
+      "dislikes": 8
+    },
+    {
+      "id": "a905",
       "title": "Rutuja Date",
       "description": "Hello ,I am Rutuja Date"
     }

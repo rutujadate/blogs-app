@@ -1,13 +1,22 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./Title.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 function Title(){
     const [userdata, setUserData] = useState({title:"",description:""});
+      const { id } = useParams();
+
+
     function handleSaveButton(){
         console.log(userdata)
-        axios.post('http://localhost:3001/blogs',userdata)
-        navigate("/blogs")
+        if(id){
+            axios.put(`http://localhost:3001/blogs/${id}`,userdata)
+            .then(()=>navigate("/blogs"))
+        }
+        else{
+            axios.post(`http://localhost:3001/blogs`,userdata)
+            .then(()=>navigate("/blogs"))
+        }
         
     }
         function handleTitle(event) {
@@ -33,6 +42,19 @@ function Title(){
     const navigateToDashboard=()=>{
         navigate("/")
     }
+    useEffect(()=>{
+        axios.get(`http://localhost:3001/blogs/${id}`)
+         .then((response) => {
+        setUserData({
+            title: response.data.title,
+            description: response.data.description,
+          });
+    })
+    .catch((error) => {
+        console.error("Error fetching blogs:", error);
+      })
+    } ,[id]);
+
     return(
 <div className="titleBackgroundColor">
     <div className="titleHeader">

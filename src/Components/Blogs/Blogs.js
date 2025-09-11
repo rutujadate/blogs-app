@@ -13,18 +13,34 @@ function Blogs() {
 
 
 
-  const [liked, setLiked] = useState(0);
-  const [disliked, setDisliked] = useState(0);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
   const [blogsInfo, setBlogsInfo] = useState([]);
 
-  function handleLiked() {
+  function handleLikes(id, currentLikes) {
+    const updatedLikes = currentLikes + 1;
 
-    setLiked(liked + 1);
+
+    axios.patch(`http://localhost:3001/blogs/${id}`, { likes: updatedLikes })
+      .then(() => {
+        getAllBlogs()
+      })
+      .catch((err) => console.error("Error updating likes:", err));
+
   }
 
-  function handleDisliked() {
-    setDisliked(disliked + 1);
+  function handleDislikes(id, currentDisLikes) {
+    const updatedDisLikes = currentDisLikes + 1;
+
+    axios.patch(`http://localhost:3001/blogs/${id}`, { dislikes: updatedDisLikes })
+      .then(() => {
+        getAllBlogs()
+  
+      })
+      .catch((err) => console.error("Error updating dislikes:", err));
   }
+
+
   function handleToDelete(id) {
     axios.delete(`http://localhost:3001/blogs/${id}`)
       .then(response => {
@@ -35,12 +51,12 @@ function Blogs() {
         console.error('Error deleting item:', error);
       });
   }
-  function getAllBlogs(){
-       axios.get("http://localhost:3001/blogs")
-        .then((response) => {
+  function getAllBlogs() {
+    axios.get("http://localhost:3001/blogs")
+      .then((response) => {
         setBlogsInfo(response.data.blogsInfo || response.data);
-    })
-    .catch((error) => {
+      })
+      .catch((error) => {
         console.error("Error fetching blogs:", error);
       })
   }
@@ -96,25 +112,25 @@ function Blogs() {
                   <div>
                     <button
                       className="likeButton"
-                      onClick={handleLiked}
+                      onClick={() => handleLikes(singleElement.id, singleElement.likes)}
                     >
-                      <i className="fa fa-thumbs-up" aria-hidden="true"> {liked}</i>
+                      <i className="fa fa-thumbs-up" aria-hidden="true"> {singleElement.likes}</i>
                     </button>
                     <button
                       className="dislikeButton"
-                      onClick={handleDisliked}
+                      onClick={() => handleDislikes(singleElement.id, singleElement.dislikes)}
                     >
-                      <i className="fa fa-thumbs-down" aria-hidden="true"> {disliked}</i>
+                      <i className="fa fa-thumbs-down" aria-hidden="true"> {singleElement.dislikes}</i>
                     </button>
                   </div>
                   <div>
                     <button className="editButton"
-                      onClick={navigateToTitle}
+                      onClick={() => navigate(`/title/${singleElement.id}`)}
                     >
                       <i className="fa fa-pencil" aria-hidden="true"></i> Edit
                     </button>
                     <button className="deleteButton"
-                      onClick={()=>handleToDelete(singleElement.id)}
+                      onClick={() => handleToDelete(singleElement.id)}
                     >
                       <i className="fa fa-trash" aria-hidden="true"></i> Delete
                     </button>

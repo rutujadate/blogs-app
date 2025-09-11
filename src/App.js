@@ -6,15 +6,16 @@ import Register from './Components/Register/Register';
 import Title from './Components/Title/Title';
 import Blogs from './Components/Blogs/Blogs';
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 function App() {
   return (
-
     < Router>
+        <ToastContainer/>
       <Routes>
         <Route path='/' element={<Dashboard />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/title' element={<Title/>}/>
+        <Route path='/title/:id?' element={<Title/>}/>
         <Route path='/blogs' element={<Blogs/>}/>
       </Routes>
     </Router>

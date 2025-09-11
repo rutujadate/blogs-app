@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from 'react-toastify';
 
 function Login() {
     // const [email, setMessage] = useState('');
@@ -30,11 +31,13 @@ function Login() {
                         console.log('user', user)
                         if (userdata.email === user.email && userdata.password === user.password) {
                             console.log('Welcome to Blogs Application');
+                             toast.success('Login successful!');
                             navigate("/blogs")
                         }
                         else {
-                            // console.log('Invalid User');
-                            alert("Invalid User")
+                            console.log('Invalid User');
+                            toast.error("Invalid User");
+
                         }
 
                     })
