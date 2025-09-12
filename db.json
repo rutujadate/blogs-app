@@ -23,15 +23,25 @@
       "name": "Rutuja Date",
       "email": "daterutuja@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "fcbd",
+      "name": "Rutuja",
+      "email": "rutuja",
+      "password": "123"
+    },
+    {
+      "id": "a21c",
+      "name": "RUTUJA",
+      "email": "rutuja@gmail.com",
+      "password": "123"
     }
   ],
   "blogs": [
     {
-      "id": "8d14",
       "title": "Rutuja",
       "description": "I am Rutuja Balasaheb Date",
-      "likes": 10,
-      "dislikes": 19
+      "id": "8d14"
     },
     {
       "id": "ad28",
@@ -48,13 +58,6 @@
       "likes": 4
     },
     {
-      "id": "3df7",
-      "title": "fsfsfs",
-      "description": "fsfsfsfsf",
-      "likes": 1,
-      "dislikes": 0
-    },
-    {
       "id": "04d2",
       "title": "Rutuja",
       "description": "hello",
@@ -62,9 +65,10 @@
       "dislikes": 8
     },
     {
-      "id": "a905",
-      "title": "Rutuja Date",
-      "description": "Hello ,I am Rutuja Date"
+      "id": "7c03",
+      "title": "spp",
+      "description": "sxshhskxjsnlkx",
+      "createdBy": "rutuja"
     }
   ]
 }

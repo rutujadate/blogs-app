@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from 'react-toastify';
 
@@ -19,28 +19,35 @@ function Login() {
         user["email"] = event.target.value;
         setUserData(user);
     }
+    useEffect(() => {
+    
+  }, []); 
 
     function handleLoginData() {
-        console.log(userdata);
+        // console.log(userdata);
         // navigate("/blogs")
         axios.get('http://localhost:3001/users')
             .then((response) => {
                 console.log('Response', response);
-                
                     response.data.map((user) => {
                         console.log('user', user)
                         if (userdata.email === user.email && userdata.password === user.password) {
-                            console.log('Welcome to Blogs Application');
+                            localStorage.setItem('userName',user.name)
+                            localStorage.setItem('userEmail',user.email)
+                    
+                            // console.log(userName)
+                            // console.log('Welcome to Blogs Application');
                              toast.success('Login successful!');
                             navigate("/blogs")
                         }
                         else {
-                            console.log('Invalid User');
+                            // console.log('Invalid User');
                             toast.error("Invalid User");
 
                         }
 
                     })
+                   
             
             });
             // .catch((error) => {
@@ -48,6 +55,8 @@ function Login() {
             // });
 
     }
+     const handleLogout = () => {
+  };
 
 
     const navigate = useNavigate();
@@ -63,7 +72,7 @@ function Login() {
             <div className="header">
                 <div className="blogsName" onClick={navigateToDashboard}>Blogs</div>
                 <div className="subHeader">
-                    <div className="loginName">Login</div>
+                    <div className="loginName" onClick={handleLogout}>Login</div>
                     <div className="registerName" onClick={navigateToRegister}>Register</div>
                 </div>
             </div>

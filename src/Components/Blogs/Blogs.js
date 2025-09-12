@@ -16,9 +16,10 @@ function Blogs() {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [blogsInfo, setBlogsInfo] = useState([]);
+  // const[userName,setUserName]=useState()
 
-  function handleLikes(id, currentLikes) {
-    const updatedLikes = currentLikes + 1;
+  function handleLikes(id, likes) {
+    const updatedLikes = likes + 1;
 
 
     axios.patch(`http://localhost:3001/blogs/${id}`, { likes: updatedLikes })
@@ -29,8 +30,8 @@ function Blogs() {
 
   }
 
-  function handleDislikes(id, currentDisLikes) {
-    const updatedDisLikes = currentDisLikes + 1;
+  function handleDislikes(id, disLikes) {
+    const updatedDisLikes = disLikes + 1;
 
     axios.patch(`http://localhost:3001/blogs/${id}`, { dislikes: updatedDisLikes })
       .then(() => {
@@ -63,8 +64,10 @@ function Blogs() {
 
 
   useEffect(() => {
+    //  userName=localStorage.getItem('userName');
     getAllBlogs()
   }, []);
+  console.log(localStorage.getItem('userName'))
 
 
   return (
@@ -73,7 +76,7 @@ function Blogs() {
         <div>
           <div className="blogsHeader"><div className="blogsName" onClick={navigateToDashboard}>Blogs</div>
             <div className="blogsSubHeader">
-              <div className="blogsLoginName">Rutuja Date</div>
+              <div className="blogsLoginName">{localStorage.getItem('userName')}</div>
               <div className="arrow">
                 <button className="blogsLogout">
                   <i className="fa fa-arrow-circle-o-right " aria-hidden="true"></i> Logout
