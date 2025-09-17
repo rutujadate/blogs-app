@@ -35,13 +35,62 @@
       "name": "RUTUJA",
       "email": "rutuja@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "f5ed",
+      "name": "Rutuja Balasaheb Date",
+      "email": "rutuja@123",
+      "password": "123"
+    },
+    {
+      "id": "5fee",
+      "name": "xyz",
+      "email": "abc",
+      "password": "123"
+    },
+    {
+      "id": "1035",
+      "name": "RutujaDate",
+      "email": "Date@",
+      "password": "123"
+    },
+    {
+      "id": "4d38",
+      "name": "Date Rutuja",
+      "email": "Date@123",
+      "password": "1234"
+    },
+    {
+      "id": "e82b",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "a686",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "822c",
+      "name": "Rutuja",
+      "email": "Rutuja",
+      "password": "123"
+    },
+    {
+      "id": "b5fd",
+      "name": "",
+      "email": "",
+      "password": ""
     }
   ],
   "blogs": [
     {
       "title": "Rutuja",
-      "description": "I am Rutuja Balasaheb Date",
-      "id": "8d14"
+      "description": "I am Rutuja Balasaheb Datedfgkl",
+      "id": "8d14",
+      "likes": 5
     },
     {
       "id": "ad28",
@@ -65,10 +114,33 @@
       "dislikes": 8
     },
     {
-      "id": "7c03",
-      "title": "spp",
-      "description": "sxshhskxjsnlkx",
-      "createdBy": "rutuja"
+      "id": "d019",
+      "title": "Rutuja",
+      "description": "Hello i am Rutuja",
+      "createdBy": "Date@123",
+      "createdAt": "17/09/2025 16:12:58"
+    },
+    {
+      "id": "b51c",
+      "title": "Rutuja",
+      "description": "Rutujan,",
+      "createdBy": "Rutuja",
+      "createdAt": "17/September/2025 16:42:50",
+      "dislikes": 22
+    },
+    {
+      "id": "e11d",
+      "title": "HELLO",
+      "description": "I am Rutuja Balasaheb Date",
+      "createdBy": "Rutuja",
+      "createdAt": "17/Sep/2025 16:44:13"
+    },
+    {
+      "id": "efe9",
+      "title": "Hiiiiii",
+      "description": "I am Rutuja Balasaheb Date",
+      "createdBy": "Rutuja",
+      "createdAt": "17-Sep-2025 16:45:09"
     }
   ]
 }

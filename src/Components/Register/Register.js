@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./Register.css";
 import { useState } from "react";
 import axios from "axios";
+import { toast } from "react-toastify/unstyled";
 
 function Register() {
     const [userdata, setUserData] = useState({ name: "", email: "", password: "" });
@@ -36,6 +37,10 @@ function Register() {
                     password: ''
                 });
             })
+            .catch((Error)=>{
+                toast.error("Invalid User",Error);
+
+            });
 
 
     }

@@ -52,6 +52,9 @@ function Blogs() {
         console.error('Error deleting item:', error);
       });
   }
+  const handleToEdit=(id)=>{
+    navigate(`/title/${id}`)
+  }
   function getAllBlogs() {
     axios.get("http://localhost:3001/blogs")
       .then((response) => {
@@ -128,7 +131,7 @@ function Blogs() {
                   </div>
                   <div>
                     <button className="editButton"
-                      onClick={() => navigate(`/title/${singleElement.id}`)}
+                      onClick={() =>handleToEdit(singleElement.id)}
                     >
                       <i className="fa fa-pencil" aria-hidden="true"></i> Edit
                     </button>

@@ -2,14 +2,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Title.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import moment from "moment";
 function Title() {
     const [userdata, setUserData] = useState({ title: "", description: "" });
     const { id } = useParams();
-    
+
 
     function handleSaveButton() {
         const userEmail = localStorage.getItem("userEmail")
         console.log(userEmail)
+        const currentDateTime = moment().format('DD-MMM-YYYY HH:mm:ss');
+        console.log(currentDateTime);
         // console.log(userdata)
         if (id) {
             axios.put(`http://localhost:3001/blogs/${id}`, userdata)
@@ -19,8 +22,8 @@ function Title() {
             axios.post(`http://localhost:3001/blogs`,
                 {
                     ...userdata,
-                    createdBy: userEmail
-                    
+                    createdBy: userEmail,
+                    createdAt: currentDateTime
                 })
                 .then(() => navigate("/blogs"))
         }
@@ -52,10 +55,12 @@ function Title() {
     useEffect(() => {
         axios.get(`http://localhost:3001/blogs/${id}`)
             .then((response) => {
-                setUserData({
-                    title: response.data.title,
-                    description: response.data.description,
-                });
+                setUserData(response.data)
+                // setUserData({
+                //     title: response.data.title,
+                //     description: response.data.description,
+                
+                // });
             })
             .catch((error) => {
                 console.error("Error fetching blogs:", error);
