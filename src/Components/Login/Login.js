@@ -28,16 +28,21 @@ function Login() {
         // navigate("/blogs")
         axios.get('http://localhost:3001/users')
             .then((response) => {
+                
                 console.log('Response', response);
                 response.data.map((user) => {
-                    console.log('user', user)
+                    // console.log('user', user)
+
                     if (userdata.email === user.email && userdata.password === user.password) {
                         localStorage.setItem('userName', user.name)
                         localStorage.setItem('userEmail', user.email)
                         navigate("/blogs")
-                        // console.log(userName)
-                        // console.log('Welcome to Blogs Application');
                         toast.success('Login successful!');
+                    }
+                    else 
+                        if(userdata.email.trim()==="" ||userdata.password.trim()===""){
+                        toast.error('Please enter email and password');
+
                     }
                     else {
                         console.log('Invalid User');

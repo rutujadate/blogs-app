@@ -5,93 +5,10 @@
       "name": "Rutuja Date",
       "email": "daterutuja@gmail.com",
       "password": "123"
-    },
-    {
-      "id": "3007",
-      "name": "Rutuja Date",
-      "email": "daterutuja@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "84d3",
-      "name": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "de2d",
-      "name": "Rutuja Date",
-      "email": "daterutuja@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "fcbd",
-      "name": "Rutuja",
-      "email": "rutuja",
-      "password": "123"
-    },
-    {
-      "id": "a21c",
-      "name": "RUTUJA",
-      "email": "rutuja@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "f5ed",
-      "name": "Rutuja Balasaheb Date",
-      "email": "rutuja@123",
-      "password": "123"
-    },
-    {
-      "id": "5fee",
-      "name": "xyz",
-      "email": "abc",
-      "password": "123"
-    },
-    {
-      "id": "1035",
-      "name": "RutujaDate",
-      "email": "Date@",
-      "password": "123"
-    },
-    {
-      "id": "4d38",
-      "name": "Date Rutuja",
-      "email": "Date@123",
-      "password": "1234"
-    },
-    {
-      "id": "e82b",
-      "name": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "a686",
-      "name": "",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "822c",
-      "name": "Rutuja",
-      "email": "Rutuja",
-      "password": "123"
-    },
-    {
-      "id": "b5fd",
-      "name": "",
-      "email": "",
-      "password": ""
     }
+    
   ],
   "blogs": [
-    {
-      "title": "Rutuja",
-      "description": "I am Rutuja Balasaheb Datedfgkl",
-      "id": "8d14",
-      "likes": 5
-    },
     {
       "id": "ad28",
       "title": "My Second blog",
@@ -141,6 +58,15 @@
       "description": "I am Rutuja Balasaheb Date",
       "createdBy": "Rutuja",
       "createdAt": "17-Sep-2025 16:45:09"
+    },
+    {
+      "id": "569a",
+      "title": "Rutuja Date",
+      "description": "hellllloooooooooo",
+      "createdBy": "rutujadate@5646",
+      "createdAt": "18-Sep-2025 14:32:57",
+      "likes": 12,
+      "dislikes": 1
     }
   ]
 }

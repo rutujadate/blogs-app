@@ -10,9 +10,6 @@ function Blogs() {
   const navigateToTitle = () => {
     navigate("/title")
   }
-
-
-
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
   const [blogsInfo, setBlogsInfo] = useState([]);
@@ -36,7 +33,7 @@ function Blogs() {
     axios.patch(`http://localhost:3001/blogs/${id}`, { dislikes: updatedDisLikes })
       .then(() => {
         getAllBlogs()
-  
+
       })
       .catch((err) => console.error("Error updating dislikes:", err));
   }
@@ -52,7 +49,7 @@ function Blogs() {
         console.error('Error deleting item:', error);
       });
   }
-  const handleToEdit=(id)=>{
+  const handleToEdit = (id) => {
     navigate(`/title/${id}`)
   }
   function getAllBlogs() {
@@ -115,6 +112,7 @@ function Blogs() {
               <div>{singleElement.description}</div>
               <div>
                 <div className="blogActions">
+
                   <div>
                     <button
                       className="likeButton"
@@ -129,19 +127,21 @@ function Blogs() {
                       <i className="fa fa-thumbs-down" aria-hidden="true"> {singleElement.dislikes}</i>
                     </button>
                   </div>
-                  <div>
-                    <button className="editButton"
-                      onClick={() =>handleToEdit(singleElement.id)}
-                    >
-                      <i className="fa fa-pencil" aria-hidden="true"></i> Edit
-                    </button>
-                    <button className="deleteButton"
-                      onClick={() => handleToDelete(singleElement.id)}
-                    >
-                      <i className="fa fa-trash" aria-hidden="true"></i> Delete
-                    </button>
-                  </div>
+                  {singleElement.createdBy=== localStorage.getItem('userEmail') ? (
+                    <div>
+                      <button className="editButton"
+                        onClick={() => handleToEdit(singleElement.id)}
+                      >
+                        <i className="fa fa-pencil" aria-hidden="true"></i> Edit
+                      </button>
+                      <button className="deleteButton"
+                        onClick={() => handleToDelete(singleElement.id)}
+                      >
+                        <i className="fa fa-trash" aria-hidden="true"></i> Delete
+                      </button>
+                    </div>):null}
                 </div>
+
               </div>
             </div>
           </div>
